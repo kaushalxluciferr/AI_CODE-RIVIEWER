@@ -4,7 +4,7 @@ import axios from "axios";
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
-
+const backendUrl=import.meta.env.VITE_BACKEND_URL
 function App() {
   const [code, setCode] = useState("");
   const [result, setResult] = useState(null);
@@ -12,7 +12,7 @@ function App() {
   const handleSubmit = async () => {
     try {
       const { data } = await axios.post(
-        "http://localhost:3000/ai/get-response",
+        backendUrl+"/ai/get-response",
         { code }
       );
       setResult(data);

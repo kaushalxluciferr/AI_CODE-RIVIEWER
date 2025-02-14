@@ -1,7 +1,6 @@
 const aiService=require('../services/ai.service')
 
 
-
 module.exports.getResponse =async (req,res)=>{
     try{
 
